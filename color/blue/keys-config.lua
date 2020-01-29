@@ -608,8 +608,10 @@ function hotkeys:init(args)
 			{ description = "Open a terminal", group = "Actions" }
 		},
 		{
-			{ env.mod, "Mod1" }, "space", function() awful.spawn("gpaste-client ui") end,
-			{ description = "Clipboard manager", group = "Actions" }
+                        { env.mod }, "space", function() awful.spawn("gpaste-client ui") end,
+                        { description = "clipboard manager", group = "actions" }
+			--{ env.mod }, "space", function() awful.spawn("rofi -modi "clipboard:greenclip print" -show clipboard -run-command \'{cmd}\'") end,
+			--{ description = "Clipboard manager", group = "Actions" }
 		},
 		{
 			{ env.mod, "Control" }, "r", awesome.restart,

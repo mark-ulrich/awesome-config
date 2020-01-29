@@ -621,15 +621,15 @@ function hotkeys:init(args)
 			{ description = "Go to right client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "j", focus_switch_byd("left"),
+			{ env.mod }, "h", focus_switch_byd("left"),
 			{ description = "Go to left client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "i", focus_switch_byd("up"),
+			{ env.mod }, "k", focus_switch_byd("up"),
 			{ description = "Go to upper client", group = "Client focus" }
 		},
 		{
-			{ env.mod }, "k", focus_switch_byd("down"),
+			{ env.mod }, "j", focus_switch_byd("down"),
 			{ description = "Go to lower client", group = "Client focus" }
 		},
 		{
@@ -855,7 +855,8 @@ function hotkeys:init(args)
 	--------------------------------------------------------------------------------
 	self.mouse.client = awful.util.table.join(
 		awful.button({}, 1, function (c) client.focus = c; c:raise() end),
-		awful.button({}, 2, awful.mouse.client.move),
+		--awful.button({}, 2, awful.mouse.client.move),
+		awful.button({ env.mod }, 1, awful.mouse.client.move),
 		awful.button({ env.mod }, 3, awful.mouse.client.resize),
 		awful.button({}, 8, function(c) c:kill() end)
 	)

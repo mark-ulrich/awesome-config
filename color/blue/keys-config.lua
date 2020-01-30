@@ -614,6 +614,10 @@ function hotkeys:init(args)
 			--{ description = "Clipboard manager", group = "Actions" }
 		},
 		{
+			{ }, "Print", function() awful.spawn("flameshot gui") end,
+			{ description = "Capture a region of the screen with flameshot", group = "Screenshot" }
+		},
+		{
 			{ env.mod, "Control" }, "r", awesome.restart,
 			{ description = "Reload WM", group = "Actions" }
 		},
